@@ -1,0 +1,27 @@
+<%= form_for @link, html: {'data-abide' => ''} do |f| %>
+<div class="row">
+	<div class="large-12 columns">
+		<h2>submit a link</h2>
+		<div class="title-field">
+			<label>title</label>
+			<%= f.text_field :name, placeholder: 'name of website', required: 'required' %>
+			<small class="error">the name of the website is required.</small>
+		</div>
+		<div class="url-field">
+			<label>url</label>
+			<%= f.text_field :url, placeholder: 'website address', required: 'required' %>
+			<small class="error">the url of the website is required.</small>
+		</div>
+		<div class="description-field">
+			<label>description</label>
+			<%= f.text_area :description, placeholder: 'description of website' %>
+		</div>
+		<div class="category-field">
+			<label>category</label>
+			<%= collection_select(:link, :category_id, @categories, :id, :name) %>
+			<small class="error">the category of the website is required.</small>
+		</div>
+		<%= f.submit 'Submit Link', class: 'button secondary' %>
+	</div>
+</div>
+<% end %>

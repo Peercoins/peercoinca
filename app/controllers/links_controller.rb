@@ -11,4 +11,10 @@ class LinksController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def new
+    @link = Link.new
+    @categories = Category.all(:order => 'name')
+  end
+
 end

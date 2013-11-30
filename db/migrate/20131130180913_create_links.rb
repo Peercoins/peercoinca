@@ -4,6 +4,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :url
+      t.boolean :active, default: false
       t.belongs_to :category
       t.timestamps
     end

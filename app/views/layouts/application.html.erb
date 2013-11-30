@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "" %>peercoin.ca</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,12 +13,20 @@
 
   <body>
 
+    <header class="row">
+      <div class="large-12 columns">
+        <h1><%= image_tag "peercoinca.png", style: 'height: 64px;' %> peercoin.ca</h1>
+      </div>
+    </header>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
+
     <footer>
       <div class="row">
         <div class="large-12 columns">
           <h5>peercoin.ca was hand crafted by <a href="http://mikehodgson.com">mike hodgson</a>. <%= link_to 'submit', new_link_url %> a link!</h5>
+          <p>Peercoin donations welcome at: </p>
         </div>
       </div>
     </footer>
