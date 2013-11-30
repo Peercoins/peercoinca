@@ -1,0 +1,15 @@
+@import "foundation_and_overrides";
+
+footer {
+  background: $primary-color;
+  padding: 10px 0px;
+  color: white;
+}
+
+footer h5, footer h5 a, footer h5 a:hover, footer h5 a:visited {
+  color: white;
+}
+
+footer h5 a {
+  font-weight: bold;
+}
