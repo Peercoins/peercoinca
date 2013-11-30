@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20131130180913) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.string   "slug"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131130180913) do
     t.string   "name"
     t.text     "description"
     t.string   "url"
+    t.boolean  "active",      default: false
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
