@@ -1,17 +1,26 @@
 <div class="row">
 	<div class="large-12 columns">
+		<p>Peercoin news and resources for Canadians!</p>
+		<p><em>Link submission coming soon!</em></p>
+		<p><%= image_tag "peercoin-small.png", style: 'margin-right: 5px; margin-top: -3px;', alt: 'Official Site!',  title: 'Official Site!' %> = official website, <%= image_tag "peercoinca-small.png", style: 'margin-right: 5px; margin-top: -3px;', alt: 'This site is Canadian!',  title: 'This site is Canadian!' %> = Canadian-run website
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
 		<ul class="large-block-grid-3">
 			<% @categories.each do |category| %>
+			<% if category.links.count > 0 %>
 			<li>
 				<h2><%= category.name %></h2>
 				<% category.links.each do |link| %>
 					<p>
-						<strong><%= link.name %></strong><br />
-						<%= link.description %><br />
+						<strong><% if link.local %><%= image_tag "peercoinca-small.png", style: 'margin-right: 5px; margin-top: -3px;', alt: 'This site is Canadian!',  title: 'This site is Canadian!' %><% elsif link.important %><%= image_tag "peercoin-small.png", style: 'margin-right: 5px; margin-top: -3px;', alt: 'Official Site!',  title: 'Official Site!' %><% end %><%= link.name %></strong><br />
+						<% if link.description != '' %><%= link.description %><br /><% end %>
 						<%= link_to link.url, link %>
 					</p>
 				<% end %>
 			</li>
+			<% end %>
 			<% end %>
 		</ul>
 	</div>

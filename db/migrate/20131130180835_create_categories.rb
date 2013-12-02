@@ -4,6 +4,7 @@ class CreateCategories < ActiveRecord::Migration
       t.string :name
       t.string :slug
       t.text :description
+      t.boolean :important, default: false
 
       t.timestamps
     end
@@ -14,5 +15,6 @@ class CreateCategories < ActiveRecord::Migration
     Category.create(name: 'Merchants', slug: 'merchants')
     Category.create(name: 'News', slug: 'news')
     Category.create(name: 'Other', slug: 'other')
+    Category.create(name: 'Official', slug: 'official', important: true)
   end
 end

@@ -45,3 +45,5 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'debugger', group: [:development, :test]
 
 gem 'foundation-rails'
+
+gem 'activerecord-session_store'

@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130180913) do
+ActiveRecord::Schema.define(version: 20131201220327) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.string   "slug"
     t.text     "description"
+    t.boolean  "important",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,9 +27,21 @@ ActiveRecord::Schema.define(version: 20131130180913) do
     t.text     "description"
     t.string   "url"
     t.boolean  "active",      default: false
+    t.boolean  "local",       default: false
+    t.boolean  "important",   default: false
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
 end
