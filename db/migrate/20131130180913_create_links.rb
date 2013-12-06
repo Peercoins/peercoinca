@@ -11,7 +11,6 @@ class CreateLinks < ActiveRecord::Migration
       t.timestamps
     end
     Link.create(name: 'D7 Pool', description: '1.5% / Stratum / PPLNS', url: 'https://ppcoin.d7.lt/', active: true, category: Category.find(1))
-    Link.create(name: 'FuzzyBear\'s PPC Pool', description: '2% / Stratum / PPS,PPLNS,ESMPPS', url: 'http://fuzzypool.org/pool/', active: true, category: Category.find(1))
     Link.create(name: 'Fixx PPCoin Pool', description: '0% / Stratum / PPLNS', url: 'http://ppc.fixx.ru/', active: true, category: Category.find(1))
     Link.create(name: 'PeerCoinTalk', description: 'Official Forums', url: 'http://www.peercointalk.org/', active: true, category: Category.find(2), important: true)
     Link.create(name: 'Peercoin Sub-Reddit', description: 'Peercoin on Reddit', url: 'http://www.reddit.com/r/peercoin', active: true, category: Category.find(2))
